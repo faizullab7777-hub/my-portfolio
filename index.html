@@ -1,47 +1,20 @@
 <body style="background-color: #111; color: white; font-family: sans-serif; padding: 10px; text-align: center;">
 
-    <h1 style="color: #ffcc00; text-align: center; border-bottom: 2px solid #ffcc00; padding-bottom: 10px; max-width: 400px; margin: 20px auto;">🏏 CRICBUZZ LIVE SCORE</h1>
+    <h1 style="color: #ffcc00; text-align: center; border-bottom: 2px solid #ffcc00; padding-bottom: 10px; max-width: 400px; margin: 20px auto;">🏏 ASLI LIVE CRICKET MATCH</h1>
 
     <div style="background-color: #222; border: 2px solid #333; border-radius: 10px; padding: 20px; margin: 20px auto; max-width: 400px; text-align: center; box-shadow: 0px 4px 10px rgba(0,0,0,0.5);">
-        <h3 id="match-title" style="color: #00ffcc; margin-top: 0; letter-spacing: 1px;">🔴 T20 INTERNATIONAL MATCH</h3>
         
-        <p style="font-size: 32px; font-weight: bold; margin: 15px 0; color: #fff;">
-            PAK: <span id="score" style="color: #00ffcc;">152</span> / <span id="wickets" style="color: #ff3333;">3</span>
+        <h3 style="color: #00ffcc; margin-top: 0; letter-spacing: 1px;">🔴 LIVE MATCH IS ACTIVE</h3>
+        
+        <p style="font-size: 18px; margin: 15px 0; color: #fff; line-height: 1.5;">
+            Ground se seedha har ball ka score aur live commentary dekhne ke liye niche button par click karein!
         </p>
         
-        <p style="font-size: 18px; color: #aaa; margin-bottom: 20px;">Overs: <span id="overs">14.2</span></p>
+        <a href="https://www.cricbuzz.com/cricket-match/live-scores" target="_blank" style="display: inline-block; background-color: #00ffcc; color: #111; font-weight: bold; font-size: 18px; padding: 12px 25px; border-radius: 25px; text-decoration: none; margin: 15px 0; box-shadow: 0 0 15px #00ffcc; transition: 0.3s;">
+            👉 CLICK HERE FOR LIVE SCORE
+        </a>
         
-        <div style="background-color: #333; padding: 10px; border-radius: 5px; color: #ffcc00; font-weight: bold; font-size: 16px;">
-            Current Run Rate: <span id="crr">10.60</span>
-        </div>
+        <p style="font-size: 12px; color: #aaa; margin-top: 10px;">Status: Connected to Live Ground Server via Cricbuzz</p>
     </div>
-    <script>
-        let runs = 152;
-        let wickets = 3;
-        let balls = 86; // 14 overs * 6 + 2 balls = 86 balls
-
-        setInterval(() => {
-            if (wickets < 10 && balls < 120) {
-                // Har ball par automatic run lagna (0 se 6 tak)
-                let ballRuns = Math.floor(Math.random() * 7); 
-                
-                if (ballRuns === 5) {
-                    wickets++; // 5 runs par wicket out
-                } else {
-                    runs += ballRuns;
-                }
-                
-                balls++;
-                let currentOvers = Math.floor(balls / 6) + "." + (balls % 6);
-                let currentCRR = ((runs / balls) * 6).toFixed(2);
-
-                // Live Screen Update
-                document.getElementById("score").innerText = runs;
-                document.getElementById("wickets").innerText = wickets;
-                document.getElementById("overs").innerText = currentOvers;
-                document.getElementById("crr").innerText = currentCRR;
-            }
-        }, 3000); // Har 3 second baad automatic scorecard badlega
-    </script>
 
 </body>
